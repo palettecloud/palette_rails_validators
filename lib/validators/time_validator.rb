@@ -10,10 +10,7 @@ class TimeValidator < ActiveModel::EachValidator
   # 備考：
   #   _time_option_ の _minute_ や _second_ が省略された場合は 0 として扱われる
   def validate_each(record, attribute, value)
-    if value.nil?
-      record.errors[attribute] << "に値を入力してください。"
-      return
-    end
+    return if value.blank?
 
     # greater than validation
     if options[:gt].present?
