@@ -72,3 +72,4 @@ autoload :TextFormatValidator, 'validators/text_format_validator'
 autoload :TimeValidator, 'validators/time_validator'
 autoload :TimeFormatValidator, 'validators/time_format_validator'
 
+autoload :UriFormatValidator, 'validators/uri_format_validator'
