@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{ActiveModel Based Rails Validators.}
   spec.description   = %q{ActiveModel Based Rails Validators.}
-  spec.homepage      = "https://github.com/machikoe/palette_rails_validators"
+  spec.homepage      = "https://github.com/palettecloud/palette_rails_validators"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

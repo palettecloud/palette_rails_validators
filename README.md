@@ -7,7 +7,7 @@ ActiveModel Based Rails Validators
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'palette_rails_validators', github: 'machikoe/palette_rails_validators' 
+gem 'palette_rails_validators', github: 'palettecloud/palette_rails_validators' 
 ```
 
 And then execute:
@@ -52,7 +52,7 @@ validates :name, string_format: true
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/machikoe/palette_rails_validators. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/palettecloud/palette_rails_validators. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
