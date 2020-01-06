@@ -1,9 +1,6 @@
 class DatetimeFormatValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
-    if value.nil?
-      record.errors[attribute] << "に値を入力してください。"
-      return
-    end
+    return if value.blank?
 
     # greater than validation
     if options[:gt].present?
