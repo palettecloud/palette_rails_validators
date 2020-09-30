@@ -1,3 +1,5 @@
+v0.3.0 からバージョン管理方式をtagに移行しました。
+
 # PaletteRailsValidators
 
 ActiveModel Based Rails Validators
