@@ -32,7 +32,6 @@ RSpec.describe EmailFormatValidator, type: :model do
 
   context 'strict: false' do
     let(:strict) { false }
-    EMAIL            = /\A([\w+\-.]+@(?!ezweb\.ne\.jp\z)[a-z\d\-.]+\.[a-z]+\z|([\w+\-]+\.)*[\w+\-]+@ezweb.ne.jp\z)/i
 
     it_behaves_like 'valid email address', 'test@example.com'
 
