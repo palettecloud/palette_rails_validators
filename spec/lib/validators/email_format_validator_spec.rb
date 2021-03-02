@@ -91,6 +91,10 @@ RSpec.describe EmailFormatValidator, type: :model do
       context "host includes '.' just before '@'" do
         it_behaves_like 'invalid email address', 'test.@ezweb.ne.jp'
       end
+
+      context "domain includes ',' instead of '." do
+        it_behaves_like 'invalid email address', 'test@ezweb,ne,jp'
+      end
     end
   end
 
@@ -141,6 +145,10 @@ RSpec.describe EmailFormatValidator, type: :model do
 
     context "domain includes '.' next to '@'" do
       it_behaves_like 'invalid email address', 'test@.example.com'
+    end
+
+    context "domain includes ',' instead of '." do
+      it_behaves_like 'invalid email address', 'test@example,com'
     end
 
     context 'email with length = 201' do
