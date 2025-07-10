@@ -6,7 +6,7 @@ class DateFormatValidator < ActiveModel::EachValidator
     if options[:gt].present?
       date = options[:gt].try(:lambda?) ? options[:gt].call(record) : options[:gt]
       unless value > date
-        record.errors[attribute] << (options[:message] || "は " + date.to_time.to_s(:date) + " よりあとに設定してください。" )
+        record.errors.add(attribute, (options[:message] || "は " + date.to_time.to_s(:date) + " よりあとに設定してください。" ))
       end
     end
 
@@ -14,7 +14,7 @@ class DateFormatValidator < ActiveModel::EachValidator
     if options[:gte].present?
       date = options[:gte].try(:lambda?) ? options[:gte].call(record) : options[:gte]
       unless value >= date
-        record.errors[attribute] << (options[:message] || "は " + date.to_time.to_s(:date) + " 以降で設定してください。" )
+        record.errors.add(attribute, (options[:message] || "は " + date.to_time.to_s(:date) + " 以降で設定してください。" ))
       end
     end
 
@@ -22,7 +22,7 @@ class DateFormatValidator < ActiveModel::EachValidator
     if options[:lt].present?
       date = options[:lt].try(:lambda?) ? options[:lt].call(record) : options[:lt]
       unless value < date
-        record.errors[attribute] << (options[:message] || "は " + date.to_time.to_s(:date) + " よりまえに設定してください。" )
+        record.errors.add(attribute, (options[:message] || "は " + date.to_time.to_s(:date) + " よりまえに設定してください。" ))
       end
     end
 
@@ -30,7 +30,7 @@ class DateFormatValidator < ActiveModel::EachValidator
     if options[:lte].present?
       date = options[:lte].try(:lambda?) ? options[:lte].call(record) : options[:lte]
       unless value <= date
-        record.errors[attribute] << (options[:message] || "は " + date.to_time.to_s(:date) + " 以前で設定してください。" )
+        record.errors.add(attribute, (options[:message] || "は " + date.to_time.to_s(:date) + " 以前で設定してください。" ))
       end
     end
   end
