@@ -11,35 +11,35 @@ class TimeFormatValidator < ActiveModel::EachValidator
   #   _time_option_ の _minute_ や _second_ が省略された場合は 0 として扱われる
   def validate_each(record, attribute, value)
     if value.nil?
-      record.errors[attribute] << "に値を入力してください。"
+      record.errors.add(attribute, "に値を入力してください。")
       return
     end
 
     # greater than validation
     if options[:gt].present?
       unless compare(value, options[:gt], :>)
-        record.errors[attribute] << (options[:message] || "は " + time_option_to_array(options[:gt]).map(&:to_s).join(':') + " よりあとに設定してください。" )
+        record.errors.add(attribute, (options[:message] || "は " + time_option_to_array(options[:gt]).map(&:to_s).join(':') + " よりあとに設定してください。" ))
       end
     end
 
     # greater than or equal to validation
     if options[:gte].present?
       unless compare(value, options[:gte], :>=)
-        record.errors[attribute] << (options[:message] || "は " + time_option_to_array(options[:gte]).map(&:to_s).join(':') + " 以降で設定してください。" )
+        record.errors.add(attribute, (options[:message] || "は " + time_option_to_array(options[:gte]).map(&:to_s).join(':') + " 以降で設定してください。" ))
       end
     end
 
     # less than validation
     if options[:lt].present?
       unless compare(value, options[:lt], :<)
-        record.errors[attribute] << (options[:message] || "は " + time_option_to_array(options[:lt]).map(&:to_s).join(':') + " よりまえに設定してください。" )
+        record.errors.add(attribute, (options[:message] || "は " + time_option_to_array(options[:lt]).map(&:to_s).join(':') + " よりまえに設定してください。" ))
       end
     end
 
     # less than or equal to validation
     if options[:lte].present?
       unless compare(value, options[:lte], :<=)
-        record.errors[attribute] << (options[:message] || "は " + time_option_to_array(options[:lte]).map(&:to_s).join(':') + " 以前で設定してください。" )
+        record.errors.add(attribute, (options[:message] || "は " + time_option_to_array(options[:lte]).map(&:to_s).join(':') + " 以前で設定してください。" ))
       end
     end
   end

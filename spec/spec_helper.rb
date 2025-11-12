@@ -1,5 +1,7 @@
 require "bundler/setup"
+require "active_support/core_ext/time/conversions"
 require "palette_rails_validators"
+require 'timecop'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -10,5 +12,13 @@ RSpec.configure do |config|
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
+  end
+
+  config.before(:each) do
+    Timecop.freeze(Time.current)
+  end
+
+  config.after(:each) do
+    Timecop.return
   end
 end
