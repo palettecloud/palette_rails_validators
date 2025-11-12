@@ -20,10 +20,7 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
-      - name: Install dependencies
-        run: |
-          gem install bundler
-          bundle install --jobs 4 --retry 3
+
       - name: Install appraisal dependencies
         run: bundle exec appraisal install
       - name: Run rspec

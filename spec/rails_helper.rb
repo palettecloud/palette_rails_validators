@@ -5,5 +5,4 @@ require_relative '../lib/validators/date_format_validator'
 
 Time.zone = 'Tokyo'
 
-# This file is intentionally left blank.
-# It's a placeholder for RSpec's rails_helper.
+# This file sets up the test environment for RSpec, including required libraries and configuration.
